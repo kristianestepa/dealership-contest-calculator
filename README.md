@@ -29,7 +29,7 @@ The engine executes business rules using the following matrix:
 
 | Factor | New Vehicles | Used Vehicles |
 | :--- | :--- | :--- |
-| **Gross Multiplier** | $+5\text{ pts per } \$1,000\text{ gross}$ | $+8\text{ pts per } \$1,000\text{ gross}$ |
+| **Gross Multiplier** | 5x points per $1,000 | 8x points per $1,000 |
 | **Lease Multiplier** | $2\times\text{ total deal points}$ | N/A |
 | **Split Sales** | Points divided by 2 per rep | Points divided by 2 per rep |
 
