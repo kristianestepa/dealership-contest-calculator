@@ -15,7 +15,7 @@ This project automates that entire process into a centralized, error-free calcul
 ## 🎯 Features
 
 * **Automated Point Logic:** Automatically applies point calculations based on deal variables:
-  * **Gross Performance:** Calculates linear point scaling based on total front-end gross 5x points per $1,000 for New, 8x points per $1,000 for Used).
+  * **Gross Performance:** Calculates linear point scaling based on total front-end gross 5x points per $1,000 for New, 8x points per $1,000 for Used.
   * **Inventory Age Multipliers:** Automatically assigns bonus point tiers based on days in inventory.
   * **Deal Types & Splits:** Handles lease multipliers ($2\times$) and evenly divides accumulated points across secondary salespeople for split deals.
 * **Real-Time Standings:** Ranks salespeople automatically from highest total points to lowest.
