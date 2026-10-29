@@ -1,56 +1,96 @@
-# Auto Retail Sales Contest & Points Engine
+Dealership Sales Contest Calculator
 
-> A C++ CLI engine designed to automate point calculations for dealership monthly sales contests.
+A command-line tool for calculating monthly sales contest points at a car dealership. Enter each deal, and the program works out the points for each salesperson and keeps a running leaderboard.
 
----
+This is a C++ prototype for testing the point logic. A web version is planned.
 
-## 📌 Overview
+Features
+Add deals for one or two salespeople (split deals)
+Separate point rules for new and used vehicles
+Lease deals (new vehicles only) earn double points
+Running leaderboard sorted by total points
+Input handling for formatted numbers such as 2,700 or $2,700
+Build and Run
 
-At automotive dealerships, receptionists and desk managers often process deal sheets manually. Calculating monthly contest points requires cross-referencing physical cheat sheets (accounting for vehicle type, lease multipliers, inventory age brackets, and split sales) and manually populating and re-sorting Excel spreadsheets after every single turn-in. 
+Requires a C++17 compiler (g++, clang++, or MSVC).
 
-This project automates that entire process into a centralized, error-free calculation engine, reducing processing time and eliminating human math errors.
+bash
+g++ -std=c++17 -o contest contest.cpp
+./contest
 
----
+On Windows, run contest.exe instead of ./contest.
 
-## 🎯 Features
+How to Use
+=== DEALERSHIP CONTEST SYSTEM ===
+1. Add New Deal Entry
+2. View Current Leaderboard
+3. Exit
 
-* **Automated Point Logic:** Automatically applies point calculations based on deal variables:
-  * **Gross Performance:** Calculates linear point scaling based on total front-end gross 5x points per $1,000 for New, 8x points per $1,000 for Used.
-  * **Inventory Age Multipliers:** Automatically assigns bonus point tiers based on days in inventory.
-  * **Deal Types & Splits:** Handles lease multipliers ($2\times$) and evenly divides accumulated points across secondary salespeople for split deals.
-* **Real-Time Standings:** Ranks salespeople automatically from highest total points to lowest.
-* **CLI Interface:** Light-weight, zero-dependency C++ console tool for high-speed terminal execution.
+When adding a deal, the program asks for:
 
----
+Salesperson name
+Whether there is a second salesperson (y/n)
+New or used
+Whether it is a lease (new vehicles only)
+Total gross
+Vehicle age
+Point Rules
 
-## 🧮 Contest Calculation Logic
+Points for a deal are the gross points plus the age points.
 
-The engine executes business rules using the following matrix:
+Gross Points
 
-| Factor | New Vehicles | Used Vehicles |
-| :--- | :--- | :--- |
-| **Gross Multiplier** | 5x points per $1,000 | 8x points per $1,000 |
-| **Lease Multiplier** | $2\times\text{ total deal points}$ | N/A |
-| **Split Sales** | Points divided by 2 per rep | Points divided by 2 per rep |
+Points are awarded per whole $1,000 of gross. Partial thousands are not counted.
 
-### Inventory Age Brackets
+Vehicle	Points per $1,000
+New	5
+Used	8
 
-```text
-New Vehicles:
-  - Age < 25 days   : +5 pts
-  - 25 - 49 days    : +10 pts
-  - 50 - 74 days    : +15 pts
-  - 75 - 99 days    : +20 pts
-  - 100 - 124 days  : +25 pts
-  - 125 - 149 days  : +35 pts
-  - 150 - 174 days  : +45 pts
-  - 175+ days       : +65 pts
+Any gross under $1,000, including a negative gross, earns 0 gross points.
 
-Used Vehicles:
-  - Age < 20 days   : +5 pts
-  - 20 - 29 days    : +10 pts
-  - 30 - 39 days    : +20 pts
-  - 40 - 49 days    : +30 pts
-  - 50 - 59 days    : +40 pts
-  - 60 - 69 days    : +50 pts
-  - 70+ days        : +60 pts
+Examples: $6,372 on a new vehicle = 30 points. $7,200 on a used vehicle = 56 points.
+
+Age Points (New Vehicles)
+Age	Points
+Under 25	5
+25 to 49	10
+50 to 74	15
+75 to 99	20
+100 to 124	25
+125 to 149	35
+150 to 174	45
+175+	65
+Age Points (Used Vehicles)
+Age	Points
+Under 20	5
+20 to 29	10
+30 to 39	20
+40 to 49	30
+50 to 59	40
+60 to 69	50
+70+	60
+Multipliers
+Lease (new vehicles only): total points are doubled.
+Split deal: total points are divided by 2, and each salesperson receives that amount.
+Example
+
+New vehicle, lease, one salesperson (no split), gross $2,700, age 150:
+
+Gross points: 2 x 5            = 10
+Age points:   150 falls in 150-174 = 45
+Subtotal:     10 + 45          = 55
+Lease:        55 x 2           = 110
+
+The salesperson receives 110 points.
+
+Changing the Rules
+
+All point tiers and multipliers are defined in small functions near the top of contest.cpp (newGrossPoints, usedGrossPoints, newAgePoints, usedAgePoints), so contest rules can be updated in one place.
+
+Limitations
+Leaderboard data is held in memory only and is lost when the program closes.
+Salesperson names are case-sensitive, so "Alex" and "alex" are tracked separately.
+Roadmap
+Web-based version with dropdown salesperson selection and live point preview
+Saved deal history
+Export to a spreadsheet file for Excel
