@@ -29,13 +29,16 @@ How to Use
 
 When adding a deal, the program asks for:
 
-Salesperson name
-Whether there is a second salesperson (y/n)
-New or used
-Whether it is a lease (new vehicles only)
-Total gross
-Vehicle age
-Point Rules
+1. Salesperson name
+2. Whether there is a second salesperson (y/n)
+3. New or used
+4. Whether it is a lease (new vehicles only)
+5. Total gross
+6. Vehicle age
+7. Point Rules
+
+### 1. Gross Points
+Points are awarded per whole $1,000 of gross profit. Partial thousands and negative grosses (losses) earn 0 gross points.
 
 | Vehicle Condition | Points per $1,000 Gross |
 | :--- | :--- |
