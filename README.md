@@ -37,52 +37,54 @@ Total gross
 Vehicle age
 Point Rules
 
-Points for a deal are the gross points plus the age points.
+| Vehicle Condition | Points per $1,000 Gross |
+| :--- | :--- |
+| **New Vehicles** | 5 points |
+| **Used Vehicles** | 8 points |
 
-Gross Points
+*Example:* `$6,372` gross on a new vehicle = `30 points` ($6k × 5).
 
-Points are awarded per whole $1,000 of gross. Partial thousands are not counted.
+---
 
-Vehicle	Points per $1,000
-New	5
-Used	8
+### 2. Inventory Age Points
+Older inventory earns higher bonus points to encourage aged unit sales.
 
-Any gross under $1,000, including a negative gross, earns 0 gross points.
+#### New Vehicles
+| Days in Inventory (Age) | Points |
+| :--- | :--- |
+| Under 25 days | 5 |
+| 25 – 49 days | 10 |
+| 50 – 74 days | 15 |
+| 75 – 99 days | 20 |
+| 100 – 124 days | 25 |
+| 125 – 149 days | 35 |
+| 150 – 174 days | 45 |
+| 175+ days | 65 |
 
-Examples: $6,372 on a new vehicle = 30 points. $7,200 on a used vehicle = 56 points.
+#### Used Vehicles
+| Days in Inventory (Age) | Points |
+| :--- | :--- |
+| Under 20 days | 5 |
+| 20 – 29 days | 10 |
+| 30 – 39 days | 20 |
+| 40 – 49 days | 30 |
+| 50 – 59 days | 40 |
+| 60 – 69 days | 50 |
+| 70+ days | 60 |
 
-Age Points (New Vehicles)
-Age	Points
-Under 25	5
-25 to 49	10
-50 to 74	15
-75 to 99	20
-100 to 124	25
-125 to 149	35
-150 to 174	45
-175+	65
-Age Points (Used Vehicles)
-Age	Points
-Under 20	5
-20 to 29	10
-30 to 39	20
-40 to 49	30
-50 to 59	40
-60 to 69	50
-70+	60
-Multipliers
-Lease (new vehicles only): total points are doubled.
-Split deal: total points are divided by 2, and each salesperson receives that amount.
-Example
+---
 
-New vehicle, lease, one salesperson (no split), gross $2,700, age 150:
+### 3. Multipliers & Splits
+* **Lease Bonus (New Vehicles Only):** Total points are **multiplied by 2**.
+* **Split Deals:** Total points are **divided by 2**, and each participating salesperson receives the split amount.
 
-Gross points: 2 x 5            = 10
-Age points:   150 falls in 150-174 = 45
-Subtotal:     10 + 45          = 55
-Lease:        55 x 2           = 110
-
-The salesperson receives 110 points.
+> **Calculation Example:** 
+> * New vehicle, Lease, Single salesperson
+> * Gross: `$2,700` | Age: `150` days
+> * **Gross points:** $2,000 / $1,000 = 2 \times 5 =$ `10`
+> * **Age points:** (150 falls in 150–174 tier) $=$ `45`
+> * **Subtotal:** $10 + 45 =$ `55`
+> * **Lease Bonus:** $55 \times 2 =$ `110 points`
 
 Changing the Rules
 
